@@ -1,4 +1,3 @@
-
 Description:
 
 Your objective for this assignment is to extend the Color Picker app from HW1. You're going to change the list of animals from a static list to a data-driven list that can be modified by the user.
