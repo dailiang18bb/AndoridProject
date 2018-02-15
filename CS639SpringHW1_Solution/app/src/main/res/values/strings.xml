@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">CS639SpringHW1</string>
-    <string name="stringBirdText">Approximately 75% of wild birds live for less than a year. The larger the bird, the more likely it is to live longer. The large wandering albatross, for example, can live for up to 80 years.
-    </string>
-    <string name="stringCatText">A cat’s brain is biologically more similar to a human brain than it is to a dog’s. Both humans and cats have identical regions in their brains that are responsible for emotions.
-    </string>
-    <string name="stringDogText">The shape of a dog’s face suggests how long it will live. Dogs with sharp, pointed faces that look more like wolves typically live longer. Dogs with very flat faces, such as bulldogs, often have shorter lives.
-    </string>
+
+    <string name="bird_description">This is a bird. It can usually be found flying or looking for worms in the first</string>
+    <string name="cat_description">This is a cat. They are big fans of milk and yarn. They do not like water and also don\'t like when you touch their tails.</string>
+    <string name="dog_description">This is a dog. Sometimes referred to as a human\'s best friend. They like playing with bones and frisbees.</string>
+    <string name="please_select_an_animal_image_before_choosing_a_color">Please select an animal image before choosing a color</string>
 
 </resources>
