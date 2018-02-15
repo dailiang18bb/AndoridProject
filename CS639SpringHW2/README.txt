@@ -31,7 +31,3 @@ android:focusableInTouchMode="false"
 android:focusable="false"
 
 These two hints enable Android to distinguish between a button click and a row click
-
-
-
-charle
