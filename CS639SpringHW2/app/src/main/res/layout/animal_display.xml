@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/bird"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bird" />
+
+            <TextView
+                android:id="@+id/bird_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/bird"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/cat"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_cat" />
+
+            <TextView
+                android:id="@+id/cat_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/cat"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/dog"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_dog" />
+
+            <TextView
+                android:id="@+id/dog_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/dog"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="next fact" />
+
+                <Button
+                    android:id="@+id/delete_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="delete fact" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:imeOptions="actionGo"
+            android:inputType="text|textAutoComplete|textAutoCorrect|textCapSentences" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="add fact" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/red"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:background="#f00" />
+
+        <View
+            android:id="@+id/orange"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:background="#FF7F24" />
+
+        <View
+            android:id="@+id/green"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:background="#0f0" />
+
+        <View
+            android:id="@+id/blue"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:background="#00f" />
+
+        <View
+            android:id="@+id/yellow"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:background="@color/yellow" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

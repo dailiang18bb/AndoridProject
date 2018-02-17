@@ -1,3 +1,77 @@
 <resources>
     <string name="app_name">CS639SpringHW2</string>
+
+    <string-array name="bat_description">
+        <item>This is a bat. Bats can live more than 30 years and can fly at speeds of up to 60 mph.</item>
+        <item>Bats can find their food in total darkness. They locate insects by emitting inaudible high-pitched sounds, 10\-20 beeps per second and listening to echoes.</item>
+        <item>>Some bats migrate south for the winter, while others hibernate through the cold winter months. During hibernation, bats can survive in freezing temperatures, even after being encased in ice.</item>
+    </string-array>
+
+    <string-array name="bird_description">
+        <item>This is a bird. It can usually be found flying or looking for worms in the first.</item>
+        <item>A bird\'s eye takes up about 50 percent of its head; our eyes take up about 5 percent of our head. To be comparable to a bird\'s eyes, our eyes would have to be the size of baseballs.</item>
+        <item>The smallest bird egg belongs to the hummingbird and is the size of a pea. The largest bird egg, from which the ostrich hatches, is the size of a cantaloupe.</item>
+    </string-array>
+
+    <string-array name="butterfly_description">
+        <item>This is a butterfly. Butterflies taste with their feet.</item>
+        <item>Despite popular belief, butterfly wings are clear \– the colors and patterns we see are made by the reflection of the tiny scales covering them.</item>
+        <item>Males drink from mud puddles to extract minerals that aren\'t available in flowers. This behavior is known as “puddling.”</item>
+    </string-array>
+
+    <string-array name="cat_description">
+        <item>This is a cat. They are big fans of milk and yarn. They do not like water and also don\'t like when you touch their tails.</item>
+        <item>Cats can\'t taste sweetness.</item>
+        <item>A cat has five toes on his front paws, and four on the back, unless he\'s a polydactyl.</item>
+    </string-array>
+
+    <string-array name="deer_description">
+        <item>This is a deer. Male deer are called bucks. Females are called does.</item>
+        <item>All species of deer have antlers, with the exception of the Chinese water deer. Instead of antlers, they have long canine teeth which can be as long as 8cm!</item>
+        <item>Deer can jump up to 10ft high and are very good swimmers.</item>
+    </string-array>
+
+    <string-array name="dog_description">
+        <item>This is a dog. Sometimes referred to as a human\'s best friend. They like playing with bones and frisbees.</item>
+        <item>Sound frequency is measured in Hertz (Hz). The higher the Hertz, the higher-pitched the sound. Dogs hear best at 8,000 Hz, while humans hear best at around 2,000 Hz.</item>
+        <item>When dogs kick after going to the bathroom, they are using the scent glands on their paws to further mark their territory.</item>
+    </string-array>
+
+    <string-array name="duck_description">
+        <item>This is a duck. All types of ducks are part of the bird family Anatidae, which also includes swans and geese. There are species of ducks found worldwide on every continent except Antarctica. Some duck species, such as the mallard, are found throughout the world, while others have very small, restricted ranges.</item>
+        <item>A baby duck is called a duckling, and an adult male is a drake. An adult female duck is called a hen or a duck, and a group of ducks can be called a raft, team or paddling. Generic terms like bird, chick and flock also apply to ducks.</item>
+        <item>A common urban legend is that a ducks quack does not echo. This has however, been proven to be false.</item>
+    </string-array>
+
+    <string-array name="frog_description">
+        <item>This is a frog. Every year that a frog goes into hibernation, a new layer of bone forms.</item>
+        <item>Many frogs can jump 20 times their own height.</item>
+        <item>One of the ways you can tell a male frog from a female is by looking at their ears.</item>
+    </string-array>
+
+    <string-array name="horse_description">
+        <item>This is a horse. Horses have the largest eyes of any land mammal.</item>
+        <item>Horses can run within hours after birth.</item>
+        <item>At one time people thought horses were colorblind. They’re not, though they are better at seeing yellows and greens than purples and violets.</item>
+    </string-array>
+
+
+    <string-array name="rabbit_description">
+        <item>This is a rabbit. Rabbits are not the same species as hares, which, among other things, are larger and less social.</item>
+        <item>Scary fact: A rabbit’s teeth never stop growing. Fortunately, they’re naturally kept short by the normal wear and tear of chewing. Lots and lots of chewing, that is — about 120 times a minute.</item>
+        <item>Also like cats, rabbits will groom themselves, as well as any rabbit they’re bonded with, as often as five times a day.</item>
+    </string-array>
+
+    <string-array name="whale_description">
+        <item>This is a whale. Like dolphins and porpoises, whales are believed to have descended from land animals that returned to the water roughly 50 million years ago after living millions of years on land.</item>
+        <item>Because whales must rise to the surface often to breathe, only one half of their brain sleeps at a time.</item>
+        <item>Whales swim by moving their tails up and down in a vertical motion. In contrast, fish move their tails from side to side.</item>
+    </string-array>
+
+
+    <string name="please_select_an_animal_image_before_choosing_a_color">Please select an animal image before choosing a color</string>
+    <string name="delete_fact_warning">Sorry, Cannot delete this fact, since it\'s the last one.</string>
+    <string name="add_fact_warning">Please select an animal before add a fun fact.</string>
+    <string name="void_add_fact">Please write some fun fact before add it.</string>
+
 </resources>
