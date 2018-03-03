@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CustomViewBarChart</string>
+
+    <string name="date_message">Please input a valid date type!!!</string>
+</resources>
