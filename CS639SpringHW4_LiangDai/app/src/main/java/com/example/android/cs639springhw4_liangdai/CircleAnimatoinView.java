@@ -20,7 +20,7 @@ public class CircleAnimatoinView extends View {
 
     private Paint mPaintAxis = new Paint();
     int mCircleX = dpToPx(50);
-    int mCircleY = ;
+    int mCircleY = dpToPx(50);
     int speed = 10;
     int radius = dpToPx(20);
     int flag = 0;
