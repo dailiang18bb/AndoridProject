@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">CS639SpringHW4_LiangDai</string>
-
-    <string name="example_radius">20</string>
-    <string name="example_speed">10</string>
-    <string name="example_colour">#000000</string>
+    <string name="example_radius">10</string>
+    <string name="example_speed">20</string>
+    <integer name="example_colour">0xFF0000FF</integer>
 </resources>

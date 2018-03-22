@@ -1,18 +1,16 @@
 package com.example.android.cs639springhw4_liangdai;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-import android.widget.Toast;
 
 
 /**
@@ -25,11 +23,26 @@ public class CircleAnimatoinView extends View {
     private Paint mPaintAxis = new Paint();
     int mCircleX = dpToPx(50);
     int mCircleY = dpToPx(50);
+    int flag = 0;
+//    int radius,speed;
+//    String colour;
+
     int radius = dpToPx(20);
     int speed = dpToPx(10);
-    int colour = Color.BLACK;
-    int flag = 0;
+    int colour = Color.RED;
 
+
+    public void setCircleRadius(int radius) {
+        this.radius = dpToPx(radius);
+    }
+
+    public void setCircleColor(int color) {
+        this.colour = color;
+    }
+
+    public void setCircleSpeed(int speed) {
+        this.speed = dpToPx(speed);
+    }
 
 
     /**
@@ -37,9 +50,8 @@ public class CircleAnimatoinView extends View {
      */
     public void init(int colour) {
         mPaintAxis.setStrokeWidth(5);
-        mPaintAxis.setAntiAlias(false);                       //设置画笔为无锯齿
-        mPaintAxis.setColor(colour);                    //设置画笔颜色
-        //mPaintAxis.setStyle(Paint.Style.STROKE);                   //空心效果
+        mPaintAxis.setAntiAlias(false);
+        mPaintAxis.setColor(colour);
 
 
     }
@@ -48,17 +60,18 @@ public class CircleAnimatoinView extends View {
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        init(colour);
         canvas.drawCircle(mCircleX, mCircleY, radius, mPaintAxis);
         moveCircle(speed);
         invalidate();
+
 
     }
 
 
     public CircleAnimatoinView(Context context) {
         super(context);
-        init(colour);
+
 
     }
 
@@ -80,17 +93,15 @@ public class CircleAnimatoinView extends View {
     private void moveCircle(int speed) {
         if (flag == 0) {
             mCircleX = mCircleX + speed;
-            if (mCircleX == getWidth() - radius) flag = 1;
+            if (mCircleX >= getWidth() - radius) flag = 1;
         } else if (flag == 1) {
             mCircleX = mCircleX - speed;
-            if (mCircleX == radius) flag = 0;
+            if (mCircleX <= radius) flag = 0;
         }
     }
 
 
-    /**
-     * addButton
-     */
+
 
 
     public void addColorClickListeners() {

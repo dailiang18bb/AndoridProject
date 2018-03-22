@@ -9,6 +9,24 @@ package com.example.android.cs639springhw4_liangdai;
  */
 public class circle {
 
-        int circleRadius, circleColor, circleSpeed;
+    String name, circleColor;
+    int circleRadius, circleSpeed;
+
+    public circle(String name) {
+        this.name = name;
+    }
+
+    public void setCircleRadius(int radius) {
+        circleRadius = radius;
+    }
+
+    public void setCircleColor(String color) {
+        circleColor = color;
+    }
+
+    public void setCircleSpeed(int speed) {
+        circleSpeed = speed;
+    }
+
 
 }
