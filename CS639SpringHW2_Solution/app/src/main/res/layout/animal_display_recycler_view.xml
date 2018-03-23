@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_above="@+id/fun_fact_edit_text"
+        android:layout_marginBottom="10dp"/>
+
+
+    <EditText
+        android:id="@+id/fun_fact_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/color_picker"
+        android:textSize="18dp"
+        android:layout_marginStart="5dp"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/bttn_add"/>
+
+    <Button
+        android:id="@+id/bttn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_fact"
+        android:layout_alignTop="@+id/fun_fact_edit_text"
+        android:layout_marginEnd="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="@+id/fun_fact_edit_text"
+        android:layout_alignParentBottom="@+id/fun_fact_edit_text"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/color_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp">
+
+        <View
+            android:id="@+id/red"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#f00"
+            android:layout_marginEnd="3dp"/>
+        <View
+            android:id="@+id/orange"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#FF7F24"
+            android:layout_marginEnd="3dp"/>
+        <View
+            android:id="@+id/green"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#0f0"
+            android:layout_marginEnd="3dp"/>
+        <View
+            android:id="@+id/blue"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#00f"
+            android:layout_marginEnd="3dp"/>
+        <View
+            android:id="@+id/yellow"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#ff0"
+            android:layout_marginEnd="3dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
