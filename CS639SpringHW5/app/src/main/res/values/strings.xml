@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CS639SpringHW5</string>
+    <string name="name_text_string">Name</string>
+    <string name="biography_text_string">Biography</string>
+    <string name="addTab_button_string">add tab</string>
+    <string name="clearAll_button_string">clear all</string>
+    <string name="createTabs_button_string">create tabs</string>
+    <string name="name_hint_string">Liang Dai</string>
+    <string name="biography_hint_string">I'm Liang, I'm strong.</string>
+</resources>

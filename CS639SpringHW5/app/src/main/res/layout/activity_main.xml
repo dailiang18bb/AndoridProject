@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_text_string" />
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/name_hint_string"
+            android:layout_toEndOf="@id/name_text_view"
+            android:layout_toRightOf="@id/name_text_view" />
+
+        <TextView
+            android:id="@+id/biography_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/biography_text_string"
+            android:layout_below="@id/name_text_view"/>
+
+        <EditText
+            android:id="@+id/biography_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/biography_hint_string"
+            android:layout_toEndOf="@id/biography_text_view"
+            android:layout_toRightOf="@id/biography_text_view" />
+
+        <Button
+            android:id="@+id/addTab_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addTab_button_string"
+            android:layout_toStartOf="@id/clearAll_button"
+            android:layout_toLeftOf="@id/clearAll_button"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/clearAll_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clearAll_button_string"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/createTabs_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createTabs_button_string"
+            android:layout_toEndOf="@id/clearAll_button"
+            android:layout_toRightOf="@id/clearAll_button"
+            android:layout_alignParentBottom="true"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
