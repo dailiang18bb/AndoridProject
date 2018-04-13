@@ -4,73 +4,100 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-
-    <RelativeLayout
+    <ListView
+        android:id="@+id/biography_list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadingEdge="none" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
         >
 
-        <TextView
-            android:id="@+id/name_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name_text_string" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/name_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/name_hint_string"
-            android:layout_toEndOf="@id/name_text_view"
-            android:layout_toRightOf="@id/name_text_view" />
+            <LinearLayout
+                android:id="@+id/name_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bio_linear_layout">
 
-        <TextView
-            android:id="@+id/biography_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/biography_text_string"
-            android:layout_below="@id/name_text_view"/>
+                <TextView
+                    android:id="@+id/name_text_view"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/name_text_string"
+                    android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/biography_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/biography_hint_string"
-            android:layout_toEndOf="@id/biography_text_view"
-            android:layout_toRightOf="@id/biography_text_view" />
-
-        <Button
-            android:id="@+id/addTab_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/addTab_button_string"
-            android:layout_toStartOf="@id/clearAll_button"
-            android:layout_toLeftOf="@id/clearAll_button"
-            android:layout_alignParentBottom="true"/>
-
-        <Button
-            android:id="@+id/clearAll_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clearAll_button_string"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"/>
-
-        <Button
-            android:id="@+id/createTabs_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/createTabs_button_string"
-            android:layout_toEndOf="@id/clearAll_button"
-            android:layout_toRightOf="@id/clearAll_button"
-            android:layout_alignParentBottom="true"/>
+                <EditText
+                    android:id="@+id/name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name_hint_string"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
 
 
+            </LinearLayout>
 
-    </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/bio_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bttn">
+
+                <TextView
+                    android:id="@+id/biography_text_view"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/biography_text_string"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/biography_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/biography_hint_string"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
 
+            <LinearLayout
+                android:id="@+id/bttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/addTab_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="addTab"
+                    android:text="@string/addTab_button_string" />
+
+                <Button
+                    android:id="@+id/clearAll_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="clearAll"
+                    android:text="@string/clearAll_button_string" />
+
+                <Button
+                    android:id="@+id/createTabs_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/createTabs_button_string"
+                    android:onClick="createTabs"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
 </LinearLayout>
