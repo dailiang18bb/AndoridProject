@@ -1,4 +1,5 @@
 # Homework 6
+**©Copyright 2018 Prof. Onyekachi Nwaobasi**
 
 ## Description
 
