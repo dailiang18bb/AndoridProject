@@ -47,9 +47,21 @@ If you run into any issues connecting to the Internet in your app, make sure tha
 
 ##Attached Files:
 
-![Screenshot 1 - No Place Selected](https://github.com/dailiang18bb/AndoridProject/CS639SpringHW6/Screenshot 1 - No Place Selected.png)
 
+1. Screenshot 1 - No Place Selected  
+![Screenshot 1 - No Place Selected](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot1_NoPlaceSelected.png)
 
+2. Screenshot 2 - Start Search  
+![Screenshot 2 - Start Search](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%202%20-%20Start%20Search.png)
 
+3. Screenshot 3 - Search Harlem  
+![Screenshot 3 - Search Harlem](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%203%20-%20Search%20Harlem.png)
 
+4. Screenshot 4 - Harlem Result  
+![Screenshot 4 - Harlem Result](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%204%20-%20Harlem%20Result.png)
 
+5. Screenshot 5 - Search San Diego  
+![Screenshot 5 - Search San Diego](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%205%20-%20Search%20San%20Diego.png)
+
+6. Screenshot 6 - San Diego Result  
+![Screenshot 6 - San Diego Result](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%206%20-%20San%20Diego%20Result.png)
