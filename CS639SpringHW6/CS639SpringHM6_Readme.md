@@ -49,7 +49,7 @@ If you run into any issues connecting to the Internet in your app, make sure tha
 
 
 1. Screenshot 1 - No Place Selected  
-![Screenshot 1 - No Place Selected](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot1_NoPlaceSelected.png)
+![Screenshot 1 - No Place Selected](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%201%20-%20No%20Place%20Selected.png)
 
 2. Screenshot 2 - Start Search  
 ![Screenshot 2 - Start Search](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW6/Screenshot%202%20-%20Start%20Search.png)
