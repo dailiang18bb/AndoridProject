@@ -47,3 +47,9 @@ If you run into any issues connecting to the Internet in your app, make sure tha
 
 ##Attached Files:
 
+![Screenshot 1 - No Place Selected](https://github.com/dailiang18bb/AndoridProject/CS639SpringHW6/Screenshot 1 - No Place Selected.png)
+
+
+
+
+
