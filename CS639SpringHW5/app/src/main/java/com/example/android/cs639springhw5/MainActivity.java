@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clearAll(View view) {
         bio.clear();
+
         adapter.notifyDataSetChanged();
 
     }
