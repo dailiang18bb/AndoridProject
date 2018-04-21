@@ -1,12 +1,12 @@
-#Homework 6
+# Homework 6
 
-##Description
+## Description
 
 Your objective for this assignment is interact with the Google Places API and the World Weather Online API to create an application that allows users to type in the name of a particular place and receive weather information about that place.
 
 
 
-##Application Layout Requirements
+## Application Layout Requirements
 * When a user starts the app, they should be presented with a search bar at the top of the screen. Below the search bar, centered horizontally, should be text that says "No Place Selected". See the attached screenshot
 
 * When the user taps on the search bar, the search bar should expand and overlay itself over the Activity. Typing letters into the search bar should query the Google Places API and return the names of matching places as an autocomplete list underneath the search bar. See the attached screenshot.
@@ -15,7 +15,7 @@ Your objective for this assignment is interact with the Google Places API and th
 
 * If a user taps on the search bar, they should be able to search for another place. Searching for another place should follow the aforementioned requirements. When a new place is selected, all place and weather information about a previously selected place should be replaced with the new place's information. See the attached screenshot.
 * 
-##Helpful Hints
+## Helpful Hints
 
 This project requires you to interact with 3 Library APIs (Google Places, Picasso, Retrofit) and 1 Web API (World Weather Online). Below are helpful resources and tips for using Google Places, Retrofit & World Weather Online
 
@@ -45,7 +45,7 @@ This project requires you to interact with 3 Library APIs (Google Places, Picass
 
 If you run into any issues connecting to the Internet in your app, make sure that you've added the Internet Permission to your application. See: [Adding Permissions](https://developer.android.com/guide/topics/manifest/uses-permission-element.html)
 
-##Attached Files:
+## Attached Files:
 
 
 1. Screenshot 1 - No Place Selected  
