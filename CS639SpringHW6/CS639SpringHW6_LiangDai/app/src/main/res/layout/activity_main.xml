@@ -9,33 +9,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/city_name"
-            android:textSize="24sp" />
-
-        <LinearLayout
+        <fragment
+            android:id="@+id/place_autocomplete_fragment"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/input_edit_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="text" />
-
-            <ImageView
-                android:id="@+id/search_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:onClick="loadImage"
-                android:src="@drawable/s1f50d" />
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/no_place_text_view"
@@ -43,7 +22,8 @@
             android:layout_height="wrap_content"
             android:text="@string/no_place_selected"
             android:textSize="24sp"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            android:layout_gravity="center"/>
 
         <TextView
             android:layout_width="wrap_content"
