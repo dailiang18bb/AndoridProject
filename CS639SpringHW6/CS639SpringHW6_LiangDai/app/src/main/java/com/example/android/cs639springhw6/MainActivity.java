@@ -25,7 +25,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONObject;
 
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * World Weather API
+ * 10bfd8b24a3f4346b4a25955182304
+ */
 public class MainActivity extends AppCompatActivity {
 
     TextView mNoPlaceTextView;
@@ -79,6 +89,28 @@ public class MainActivity extends AppCompatActivity {
             public void onError(Status status) {
                 // TODO: Handle the error.
                 Log.i("MainActivity", "An error occurred: " + status);
+            }
+        });
+
+
+        //WWO get callback
+        WeatherHttpClient.getInstance().fetchWeatherInfo(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response.body().string());
+
+                    String imageUrl = jsonObject.optString("message");
+                    Picasso.get().load(imageUrl).into(mWeatherImageViewGlide);
+
+                } catch (Exception e) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
             }
         });
 
