@@ -16,3 +16,7 @@ In the Manifest.xml use`adjustResize` or `adjestPan`
     <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize">
+
+# Providing Up Navigation
+
+https://developer.android.com/training/implementing-navigation/ancestral.html
