@@ -16,3 +16,14 @@ In the Manifest.xml use`adjustResize` or `adjestPan`
     <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize">
+
+# Providing Up Navigation
+
+https://developer.android.com/training/implementing-navigation/ancestral.html
+
+# Android Drawing Separator/Divider Line in Layout?
+
+    <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@android:color/darker_gray"/>
