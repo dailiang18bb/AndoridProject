@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.GeoDataClient;
@@ -23,8 +24,10 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.squareup.picasso.Picasso;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Construct a GeoDataClient.
         mGeoDataClient = Places.getGeoDataClient(this, null);
-        // Construct a PlaceDetectionClient.
-        mPlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
 
         googleAuto();
     }
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         + place.getAttributions();
 
                 cityName = place.getName().toString();
-                Log.i("MainActivity", "\nPlace: " + cityName+ "\n" + placeDetailsStr);
+                Log.i("MainActivity", "\nPlace: " + cityName + "\n" + placeDetailsStr);
 
                 mCityNameTextView.setText(place.getName().toString());
 
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Call the get weather method
                 getWeather();
+
             }
 
             @Override
@@ -134,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 CharSequence attribution = photoMetadata.getAttributions();
                 // Get a full-size bitmap for the photo.
                 Task<PlacePhotoResponse> photoResponse = mGeoDataClient.getPhoto(photoMetadata);
+
                 photoResponse.addOnCompleteListener(new OnCompleteListener<PlacePhotoResponse>() {
                     @Override
                     public void onComplete(@NonNull Task<PlacePhotoResponse> task) {
@@ -144,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
                         mCityImageView.setImageBitmap(bitmap);
                     }
                 });
+                //release the resources
+                photoMetadataBuffer.release();
             }
         });
     }
