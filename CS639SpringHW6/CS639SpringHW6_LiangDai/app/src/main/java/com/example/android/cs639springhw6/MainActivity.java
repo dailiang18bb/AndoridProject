@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.GeoDataClient;
@@ -24,9 +23,8 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.squareup.picasso.Picasso;
-
+import org.json.JSONArray;
 import org.json.JSONObject;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,19 +32,25 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mNoPlaceTextView;
-    ImageView mCityImageViewGlide;
+    ImageView mCityImageView;
     ImageView mWeatherImageViewGlide;
-    ImageView mCityImageViewPicasso;
     ImageView mWeatherImageViewPicasso;
+    TextView mNoPlaceTextView;
+    TextView mWeatherTextViewGlide;
+    TextView mWeatherTextViewPicasso;
+    TextView mCityNameTextView;
+    TextView mGlideTextView;
+    TextView mPicassoTextView;
+
+    // For Google Autocomplete
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
 
+    //fetch method input
     private static final String MY_API = "10bfd8b24a3f4346b4a25955182304";
     private static final String MY_FORMAT = "json";
     private static final int My_NUM_OF_DAYS = 1;
     String cityName = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,22 +58,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mNoPlaceTextView = findViewById(R.id.no_place_text_view);
-        mCityImageViewGlide = findViewById(R.id.city_img_glide);
+        mCityImageView = findViewById(R.id.city_img);
         mWeatherImageViewGlide = findViewById(R.id.weather_img_glide);
-        mCityImageViewPicasso = findViewById(R.id.city_img_picasso);
         mWeatherImageViewPicasso = findViewById(R.id.weather_img_picasso);
+        mWeatherTextViewGlide = findViewById(R.id.weather_text_glide);
+        mWeatherTextViewPicasso = findViewById(R.id.weather_text_picasso);
+        mCityNameTextView = findViewById(R.id.city_name_text);
+        mGlideTextView = findViewById(R.id.text_glide);
+        mPicassoTextView = findViewById(R.id.text_picasso);
 
         // Construct a GeoDataClient.
         mGeoDataClient = Places.getGeoDataClient(this, null);
         // Construct a PlaceDetectionClient.
         mPlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
 
-
         googleAuto();
-
-        getWeather();
-
-
     }
 
 
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+
             @Override
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
@@ -89,15 +93,20 @@ public class MainActivity extends AppCompatActivity {
                         + place.getAttributions();
 
                 cityName = place.getName().toString();
+                Log.i("MainActivity", "\nPlace: " + cityName+ "\n" + placeDetailsStr);
 
-                //Log.v("getCityName", cityName);
+                mCityNameTextView.setText(place.getName().toString());
 
-                //set the no place selected text view to invisible
+                // Set visibility
                 mNoPlaceTextView.setVisibility(View.INVISIBLE);
-                //call the place photo method
+                mGlideTextView.setVisibility(View.VISIBLE);
+                mPicassoTextView.setVisibility(View.VISIBLE);
+
+                // Call the place photo method
                 getPhotos(place.getId());
 
-                Log.i("MainActivity", "Place: " + place.getName() + placeDetailsStr);
+                // Call the get weather method
+                getWeather();
             }
 
             @Override
@@ -132,50 +141,58 @@ public class MainActivity extends AppCompatActivity {
                         Bitmap bitmap = photo.getBitmap();
 
                         //set the bitmap to image view
-                        mCityImageViewGlide.setImageBitmap(bitmap);
-
+                        mCityImageView.setImageBitmap(bitmap);
                     }
                 });
             }
         });
     }
 
-
+    //WWO get callback
     public void getWeather() {
-        //WWO get callback
+
         WeatherHttpClient.getInstance().fetchWeatherInfo(MY_API, cityName, MY_FORMAT, My_NUM_OF_DAYS, new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-
-                    Log.v("response.isSuccessful()","Successful");
-
+                    Log.v("response.isSuccessful()", "Successful");
                     try {
 
+                        //deal with the json
+                        JSONObject jsonObject = new JSONObject(response.body().string()).getJSONObject("data");
+                        Log.v("MainActivity", "\n" + jsonObject);
+                        JSONArray jsonArray = jsonObject.getJSONArray("current_condition");
+                        Log.v("MainActivity", "" + jsonArray);
+                        JSONObject jsonObject2 = (JSONObject) jsonArray.opt(0);
+                        Log.v("MainActivity", "" + jsonObject2);
 
-                        JSONObject jsonObject = new JSONObject(response.body().string());
+                        //fetch the temperature
+                        String temp = jsonObject2.optString("temp_F");
+                        Log.v("MainActivity", "" + temp);
 
-
-                        String temp = jsonObject.optString("temp_F");
-                        String imageUrl = jsonObject.optString("weatherIconUrl");
-                        String weatherDesc = jsonObject.optString("weatherDesc");
-
-
+                        //fetch the weather icon
+                        JSONArray jsonArray2 = jsonObject2.getJSONArray("weatherIconUrl");
+                        String imageUrl = ((JSONObject) jsonArray2.opt(0)).optString("value");
                         Log.v("MainActivity", "" + imageUrl);
 
+                        //fetch the weather text
+                        JSONArray jsonArray3 = jsonObject2.getJSONArray("weatherDesc");
+                        String weatherDesc = ((JSONObject) jsonArray3.opt(0)).optString("value");
+                        Log.v("MainActivity", "" + weatherDesc);
 
-                        Picasso.get().load(imageUrl).into(mWeatherImageViewGlide);
+                        // set the weather text
+                        mWeatherTextViewGlide.setText(temp + "°, " + weatherDesc);
+                        mWeatherTextViewPicasso.setText(temp + "°, " + weatherDesc);
 
+                        // add the weather icon through Picasso and Glide
+                        Picasso.get().load(imageUrl).into(mWeatherImageViewPicasso);
+                        Glide.with(MainActivity.this).load(imageUrl).into(mWeatherImageViewGlide);
 
                     } catch (Exception e) {
                         e.printStackTrace();
-
-                        Log.v("error", "rrrrrererererererererer");
                     }
-
-
-                }else{
-                    Log.v("response.isSuccessful()","Fail");
+                } else {
+                    Log.v("response.isSuccessful()", "Fail");
                 }
             }
 
@@ -184,11 +201,12 @@ public class MainActivity extends AppCompatActivity {
                 t.printStackTrace();
             }
         });
-
     }
+}
 
+/* testing Picasso and Glide
 
-    public void loadImage(View view) {
+public void loadImage(View view) {
 
         //Callback URL
         String cityUrl = "http://cn.bing.com/az/hprichbg/rb/Dongdaemun_ZH-CN10736487148_1920x1080.jpg";
@@ -202,4 +220,6 @@ public class MainActivity extends AppCompatActivity {
         Picasso.get().load(cityUrl).into(mCityImageViewPicasso);
         Picasso.get().load(weatherUrl).into(mWeatherImageViewPicasso);
     }
-}
+
+
+ */

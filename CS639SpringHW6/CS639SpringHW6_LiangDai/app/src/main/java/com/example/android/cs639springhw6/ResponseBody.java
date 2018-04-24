@@ -3,7 +3,7 @@ package com.example.android.cs639springhw6;
 public class ResponseBody {
 
 
-    /*
+    /* ResponseBody from WWO
 
     {
     "data": {
