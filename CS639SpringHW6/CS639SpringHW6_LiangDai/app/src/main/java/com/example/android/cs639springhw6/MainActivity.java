@@ -32,10 +32,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * World Weather API
- * 10bfd8b24a3f4346b4a25955182304
- */
 public class MainActivity extends AppCompatActivity {
 
     TextView mNoPlaceTextView;
@@ -45,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView mWeatherImageViewPicasso;
     protected GeoDataClient mGeoDataClient;
     protected PlaceDetectionClient mPlaceDetectionClient;
+
+    private static final String MY_API = "10bfd8b24a3f4346b4a25955182304";
+    private static final String MY_FORMAT = "json";
+    private static final int My_NUM_OF_DAYS = 1;
+    String cityName = "";
 
 
     @Override
@@ -64,7 +65,17 @@ public class MainActivity extends AppCompatActivity {
         mPlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
 
 
-        //Google autocomplete bar
+        googleAuto();
+
+        getWeather();
+
+
+    }
+
+
+    //Google autocomplete bar
+    private void googleAuto() {
+
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
@@ -76,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
                         + place.getLatLng().toString() + "\n"
                         + place.getAddress() + "\n"
                         + place.getAttributions();
+
+                cityName = place.getName().toString();
+
+                //Log.v("getCityName", cityName);
 
                 //set the no place selected text view to invisible
                 mNoPlaceTextView.setVisibility(View.INVISIBLE);
@@ -91,31 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("MainActivity", "An error occurred: " + status);
             }
         });
-
-
-        //WWO get callback
-        WeatherHttpClient.getInstance().fetchWeatherInfo(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                try {
-
-                    JSONObject jsonObject = new JSONObject(response.body().string());
-
-                    String imageUrl = jsonObject.optString("message");
-                    Picasso.get().load(imageUrl).into(mWeatherImageViewGlide);
-
-                } catch (Exception e) {
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-            }
-        });
-
-
     }
+
 
     // Request photos and metadata for the specified place.
     private void getPhotos(String placeId) {
@@ -141,10 +133,58 @@ public class MainActivity extends AppCompatActivity {
 
                         //set the bitmap to image view
                         mCityImageViewGlide.setImageBitmap(bitmap);
+
                     }
                 });
             }
         });
+    }
+
+
+    public void getWeather() {
+        //WWO get callback
+        WeatherHttpClient.getInstance().fetchWeatherInfo(MY_API, cityName, MY_FORMAT, My_NUM_OF_DAYS, new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+
+                    Log.v("response.isSuccessful()","Successful");
+
+                    try {
+
+
+                        JSONObject jsonObject = new JSONObject(response.body().string());
+
+
+                        String temp = jsonObject.optString("temp_F");
+                        String imageUrl = jsonObject.optString("weatherIconUrl");
+                        String weatherDesc = jsonObject.optString("weatherDesc");
+
+
+                        Log.v("MainActivity", "" + imageUrl);
+
+
+                        Picasso.get().load(imageUrl).into(mWeatherImageViewGlide);
+
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+
+                        Log.v("error", "rrrrrererererererererer");
+                    }
+
+
+                }else{
+                    Log.v("response.isSuccessful()","Fail");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+
     }
 
 
