@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">CS639SpringHW6</string>
     <string name="city_name">City name Please</string>
-    <string name="city_weather_Glide">The weather using Glide</string>
-    <string name="city_weather_Picasso">The weather using Picasso</string>
+    <string name="city_weather_Glide">The current weather using Glide</string>
+    <string name="city_weather_Picasso">The current weather using Picasso</string>
     <string name="no_place_selected">No Place Selected</string>
     <string name="temp_icon">°, </string>
 </resources>

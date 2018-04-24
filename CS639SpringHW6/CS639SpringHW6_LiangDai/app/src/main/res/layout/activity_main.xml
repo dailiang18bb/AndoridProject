@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/city_weather_Glide"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:visibility="invisible"/>
 
 
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/city_weather_Picasso"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:visibility="invisible"/>
 
         <LinearLayout
