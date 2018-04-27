@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     // For Google Autocomplete
     protected GeoDataClient mGeoDataClient;
-    protected PlaceDetectionClient mPlaceDetectionClient;
 
     //fetch method input
     private static final String MY_API = "10bfd8b24a3f4346b4a25955182304";

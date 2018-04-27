@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CS639SpringHW6</string>
+    <string name="app_name">CS639SpringHW6 Liang Dai</string>
     <string name="city_name">City name Please</string>
     <string name="city_weather_Glide">The current weather using Glide</string>
     <string name="city_weather_Picasso">The current weather using Picasso</string>
