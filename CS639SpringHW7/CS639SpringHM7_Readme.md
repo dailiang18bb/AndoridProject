@@ -47,10 +47,16 @@ https://medium.com/google-developers/understanding-migrations-with-room-f01e04b0
 
 
 1 - First Dictionary Entries.png 
-![First Dictionary Entries](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW7/Screenshot 1 - First Dictionary Entries.png)
-2 - Add Programming.png 
-3 - Show Programming.png 
-4 - Change Programming to Noun.png 
+![First Dictionary Entries](https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%201%20-%20First%20Dictionary%20Entries.png)
+2 - Add Programming.png
+![2 - Add Programming.png] (https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%202%20-%20Add%20Programming.png)
+3 - Show Programming.png
+![3 - Show Programming.png](https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%203%20-%20Show%20Programming.png)
+4 - Change Programming to Noun.png
+![4 - Change Programming to Noun.png] (https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%204%20-%20Change%20Programming%20to%20Noun.png)
 5 - Show Across As Adverb.png 
-6 - Change Across to Preposition.png 
-7 - Show Across As Preposition.png 
+![5 - Show Across As Adverb.png ](https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%205%20-%20Show%20Across%20As%20Adverb.png)
+6 - Change Across to Preposition.png
+![6 - Change Across to Preposition.png] (https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%206%20-%20Change%20Across%20to%20Preposition.png)
+7 - Show Across As Preposition.png
+![7 - Show Across As Preposition.png] (https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%207%20-%20Show%20Across%20As%20Preposition.png)
