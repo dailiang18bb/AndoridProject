@@ -47,7 +47,7 @@ https://medium.com/google-developers/understanding-migrations-with-room-f01e04b0
 
 
 1 - First Dictionary Entries.png 
-![First Dictionary Entries]()
+![First Dictionary Entries](https://github.com/dailiang18bb/AndoridProject/raw/master/CS639SpringHW7/Screenshot 1 - First Dictionary Entries.png)
 2 - Add Programming.png 
 3 - Show Programming.png 
 4 - Change Programming to Noun.png 
