@@ -37,11 +37,14 @@ public class WeatherHttpClient {
     // Get method
     private interface WeatherService {
         @GET("weather.ashx")
-        Call<ResponseBody> getWeatherInfo(@Query("key") String mAPI, @Query("q") String cityName, @Query("format") String mFormat, @Query("num_of_days") int numOfDays);
+        Call<ResponseBody> getWeatherInfo(@Query("key") String mAPI, @Query("q") String cityName,
+                                          @Query("format") String mFormat, @Query("num_of_days") int numOfDays);
     }
 
     // Sent the request to the server
+    // to hide the method above
     public void fetchWeatherInfo(String API, String cityName, String format, int num, Callback<ResponseBody> callback) {
         mWeatherService.getWeatherInfo(API, cityName, format, num).enqueue(callback);
+
     }
 }
