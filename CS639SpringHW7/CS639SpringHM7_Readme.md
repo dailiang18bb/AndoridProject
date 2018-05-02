@@ -57,6 +57,6 @@ https://medium.com/google-developers/understanding-migrations-with-room-f01e04b0
 5 - Show Across As Adverb.png 
 ![5 - Show Across As Adverb.png ](https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%205%20-%20Show%20Across%20As%20Adverb.png)
 6 - Change Across to Preposition.png
-![6 - Change Across to Preposition.png] (https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%206%20-%20Change%20Across%20to%20Preposition.png)
+![6 - Change Across to Preposition.png](https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%206%20-%20Change%20Across%20to%20Preposition.png)
 7 - Show Across As Preposition.png
-![7 - Show Across As Preposition.png] (https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%207%20-%20Show%20Across%20As%20Preposition.png)
+![7 - Show Across As Preposition.png](https://raw.githubusercontent.com/dailiang18bb/AndoridProject/master/CS639SpringHW7/Screenshot%207%20-%20Show%20Across%20As%20Preposition.png)
