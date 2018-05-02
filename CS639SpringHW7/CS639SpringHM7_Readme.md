@@ -40,3 +40,17 @@ Please keep in mind that the entities you write in Room must adhere to certain r
 If you're going to be attempting the migration, here is a useful explanation of what migrations are and how they can be accomplished in Room: 
 
 https://medium.com/google-developers/understanding-migrations-with-room-f01e04b07929
+
+
+## Screenshot
+
+
+
+1 - First Dictionary Entries.png 
+![First Dictionary Entries]()
+2 - Add Programming.png 
+3 - Show Programming.png 
+4 - Change Programming to Noun.png 
+5 - Show Across As Adverb.png 
+6 - Change Across to Preposition.png 
+7 - Show Across As Preposition.png 
