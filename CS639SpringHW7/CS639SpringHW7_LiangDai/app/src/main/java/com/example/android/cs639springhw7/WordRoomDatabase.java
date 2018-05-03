@@ -54,9 +54,9 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(final Void... params) {
             mDao.deleteAll();
-            Word word = new Word("Hello");
+            Word word = new Word("Hello", "Hello has been used as an English greeting since the 19th century. ","none");
             mDao.insert(word);
-            word = new Word("World");
+            word = new Word("World","Usually refers to the earth, including both the planet itself and the organisms that live on it.", "none");
             mDao.insert(word);
             return null;
         }

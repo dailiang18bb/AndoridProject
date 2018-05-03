@@ -6,6 +6,12 @@
     <string name="hint_word">Word...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="hint_word_def">Word definition...</string>
+
+    <string name="radio_btn_none">None</string>
+    <string name="radio_btn_adj">Adjective</string>
+    <string name="radio_btn_adv">Adverb</string>
+    <string name="radio_btn_prep">Prepostion</string>
 
 
 </resources>
