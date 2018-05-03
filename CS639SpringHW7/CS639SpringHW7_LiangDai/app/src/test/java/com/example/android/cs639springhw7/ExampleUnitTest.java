@@ -1,4 +1,4 @@
-package com.liangdai.android.hm7_liangdai;
+package com.example.android.cs639springhw7;
 
 import org.junit.Test;
 

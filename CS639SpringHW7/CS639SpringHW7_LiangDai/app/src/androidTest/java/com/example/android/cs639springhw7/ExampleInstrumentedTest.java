@@ -1,4 +1,4 @@
-package com.liangdai.android.hm7_liangdai;
+package com.example.android.cs639springhw7;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.liangdai.android.hm7_liangdai", appContext.getPackageName());
+        assertEquals("com.example.android.androidroompractice", appContext.getPackageName());
     }
 }
