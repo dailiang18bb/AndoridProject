@@ -2,7 +2,11 @@ package com.example.android.cs639springhw7;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
+import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -37,7 +41,13 @@ public class WordRepository {
 
         @Override
         protected Void doInBackground(Word... words) {
-            mWordDao.insert(words[0]);
+            try {
+
+                mWordDao.insert(words[0]);
+            } catch (Exception e) {
+                // handle the word repeat, toast not working because AsyncTask couldn't affect the layout
+                //Toast.makeText(MainActivity.getContext(), R.string.the_word_was_already_exist, Toast.LENGTH_SHORT).show();
+            }
             return null;
         }
     }

@@ -13,5 +13,7 @@
     <string name="radio_btn_adv">Adverb</string>
     <string name="radio_btn_prep">Prepostion</string>
 
+    <string name="the_word_was_already_exist">The word was already exist</string>
+
 
 </resources>

@@ -9,7 +9,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 
-@Database(entities = {Word.class}, version = 1)
+@Database(entities = {Word.class}, version = 2)
 public abstract class WordRoomDatabase extends RoomDatabase {
 
     public abstract WordDao wordDao();
@@ -54,9 +54,9 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(final Void... params) {
             mDao.deleteAll();
-            Word word = new Word("Hello", "Hello has been used as an English greeting since the 19th century. ","none");
+            Word word = new Word("New", "It has never been seen or discovered or invented before. ","(adj.)");
             mDao.insert(word);
-            word = new Word("World","Usually refers to the earth, including both the planet itself and the organisms that live on it.", "none");
+            word = new Word("World","Usually refers to the earth, including both the planet itself and the organisms that live on it.", "(n.)");
             mDao.insert(word);
             return null;
         }

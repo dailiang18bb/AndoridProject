@@ -32,11 +32,11 @@ public class Word {
     }
 
 
-    public String getmWordExp() {
+    public String getWordDef() {
         return this.mWordDef;
     }
 
-    public String getmWordProp() {
+    public String getWordProp() {
         return this.mWordProp;
     }
 

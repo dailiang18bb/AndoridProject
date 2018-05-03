@@ -6,11 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
+
+
+    private onItemClickListener mOnItemClickListener;
 
     class WordViewHolder extends RecyclerView.ViewHolder {
 
@@ -19,11 +23,28 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         private WordViewHolder(View itemView) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.textView);
+
         }
     }
 
+
+
+    //custom on item click listener
+    public interface onItemClickListener {
+        void onItemClick(View view,int position);
+    }
+
+    public void setOnItemClickLitsener(onItemClickListener mOnItemClickLitsener)
+    {
+        mOnItemClickListener= mOnItemClickLitsener;
+    }
+
+
+
+
     LayoutInflater mInflater;
     private List<Word> mWords;
+
 
     WordListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -43,13 +64,34 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final WordViewHolder holder, int position) {
+
+        //set on item click listener
+        if(mOnItemClickListener!=null)
+        {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+                {
+                    int pos =holder.getLayoutPosition();
+                    mOnItemClickListener.onItemClick(holder.itemView, pos);
+                }
+            });
+        }
+
+
+
+
+
+
+
         if (mWords == null) {
 
             holder.wordItemView.setText(R.string.no_word);
         } else {
             Word current = mWords.get(position);
-            holder.wordItemView.setText(current.getWord());
+            String addWord = current.getWord() +" "+ current.getWordProp() + " - " + current.getWordDef();
+            holder.wordItemView.setText(addWord);
         }
 
     }
@@ -58,6 +100,8 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     public int getItemCount() {
         return mWords == null ? 0 : mWords.size();
     }
+
+
 
 
 }
