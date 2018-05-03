@@ -20,31 +20,27 @@ public class Word {
     @ColumnInfo(name = "word_prop")
     private String mWordProp;
 
-    @ColumnInfo(name = "word_exp")
-    private String mWordExp;
+    @ColumnInfo(name = "word_def")
+    private String mWordDef;
 
 
-    public Word(@NonNull String word) {
+    public Word(@NonNull String word,@NonNull String mWordDef,@NonNull String mWordProp) {
         this.mWord = word;
+        this.mWordDef = mWordDef;
+        this.mWordProp = mWordProp;
     }
 
     public String getWord() {
         return this.mWord;
     }
 
-    public void setmWordExp(@NonNull String mWordExp) {
-        this.mWordExp = mWordExp;
-    }
 
     public String getmWordExp() {
-        return this.mWordExp;
-    }
-
-    public void setmWordProp(@NonNull String mWordProp) {
-        this.mWordProp = mWordProp;
+        return this.mWordDef;
     }
 
     public String getmWordProp() {
         return this.mWordProp;
     }
+
 }
