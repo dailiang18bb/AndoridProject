@@ -14,7 +14,7 @@ import java.util.List;
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
 
-    private onItemClickListener mOnItemClickListener;
+    //private onItemClickListener mOnItemClickListener;
 
     class WordViewHolder extends RecyclerView.ViewHolder {
 
@@ -30,14 +30,14 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
 
     //custom on item click listener
-    public interface onItemClickListener {
-        void onItemClick(View view,int position);
-    }
-
-    public void setOnItemClickLitsener(onItemClickListener mOnItemClickLitsener)
-    {
-        mOnItemClickListener= mOnItemClickLitsener;
-    }
+//    public interface onItemClickListener {
+//        void onItemClick(View view,int position);
+//    }
+//
+//    public void setOnItemClickLitsener(onItemClickListener mOnItemClickLitsener)
+//    {
+//        mOnItemClickListener= mOnItemClickLitsener;
+//    }
 
 
 
@@ -67,17 +67,17 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     public void onBindViewHolder(@NonNull final WordViewHolder holder, int position) {
 
         //set on item click listener
-        if(mOnItemClickListener!=null)
-        {
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-                {
-                    int pos =holder.getLayoutPosition();
-                    mOnItemClickListener.onItemClick(holder.itemView, pos);
-                }
-            });
-        }
+//        if(mOnItemClickListener!=null)
+//        {
+//            holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v)
+//                {
+//                    int pos =holder.getLayoutPosition();
+//                    mOnItemClickListener.onItemClick(holder.itemView, pos);
+//                }
+//            });
+//        }
 
 
 
