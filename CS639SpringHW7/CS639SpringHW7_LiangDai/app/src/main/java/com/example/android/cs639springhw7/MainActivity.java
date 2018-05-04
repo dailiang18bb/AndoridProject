@@ -12,20 +12,27 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private  static Context context;
+    private static Context context;
 
     private WordViewModel mWordViewModel;
 
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
+
+    public static final String EXTRA_REPLY_MODIFY_WORD = "com.example.android.androidroompractice.wordlistsql.REPLY_MODIFY_WORD";
+    public static final String EXTRA_REPLY_MODIFY_WORDPROP = "com.example.android.androidroompractice.wordlistsql.REPLY_MODIFY_WORDPROP";
+    public static final String EXTRA_REPLY_MODIFY_WORDDEF = "com.example.android.androidroompractice.wordlistsql.REPLY_MODIFY_WORDDEF";
+
+    private int positionId;
+    private int positionIdUpdate;
 
 
     @Override
@@ -33,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        context=getApplicationContext();
-
+        context = getApplicationContext();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,6 +63,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<Word> words) {
                 adapter.setWords(words);
+                positionId = words.size() + 1;
+
+//                int a = words.get(2).getId();
+//                Log.v("MainActivity", String.valueOf(positionId )+a );
+            }
+        });
+
+        // set on item click
+        adapter.setOnItemClickListener(new WordListAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(int position, String word, String wordDef, String wordProp) {
+                // TODO Modify the word
+                Toast.makeText(MainActivity.this, "you clicked on the " + position + " row", Toast.LENGTH_SHORT).show();
+
+                //Log.v("MainActivity", word + " " + wordDef + " " + wordProp);
+                Intent intent = new Intent(MainActivity.this, NewWordActivity.class);
+                intent.putExtra(EXTRA_REPLY_MODIFY_WORD, word);
+                intent.putExtra(EXTRA_REPLY_MODIFY_WORDDEF, wordDef);
+                intent.putExtra(EXTRA_REPLY_MODIFY_WORDPROP, wordProp);
+                startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
+                //Log.v("MainActivity", ""+ position);
+                positionIdUpdate = position + 1;
             }
         });
     }
@@ -86,12 +114,13 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY), data.getStringExtra(NewWordActivity.EXTRA_REPLY_DEF), data.getStringExtra(NewWordActivity.EXTRA_REPLY_PROP));
-            Log.v("MainActivity", word.getWord() + word.getWordDef() + word.getWordProp());
-
-                mWordViewModel.insert(word);
-
-
+            Word word = new Word(positionId, data.getStringExtra(NewWordActivity.EXTRA_REPLY), data.getStringExtra(NewWordActivity.EXTRA_REPLY_DEF), data.getStringExtra(NewWordActivity.EXTRA_REPLY_PROP));
+            //Log.v("MainActivity", word.getWord() + word.getWordDef() + word.getWordProp());
+            mWordViewModel.insert(word);
+        } else if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == NewWordActivity.RESULT_UPDATE) {
+            Word word = new Word(positionIdUpdate, data.getStringExtra(NewWordActivity.EXTRA_REPLY), data.getStringExtra(NewWordActivity.EXTRA_REPLY_DEF), data.getStringExtra(NewWordActivity.EXTRA_REPLY_PROP));
+            //Log.v("MainActivity", word.getWord() + word.getWordDef() + word.getWordProp());
+            mWordViewModel.update(word);
         } else {
             Toast.makeText(
                     getApplicationContext(),
@@ -99,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
         }
     }
-
 
     public static Context getContext() {
         return context;

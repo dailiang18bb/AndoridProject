@@ -5,6 +5,7 @@
 
     <string name="hint_word">Word...</string>
     <string name="button_save">Save</string>
+    <string name="button_update">Update</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="hint_word_def">Word definition...</string>
 
@@ -13,7 +14,10 @@
     <string name="radio_btn_adv">Adverb</string>
     <string name="radio_btn_prep">Prepostion</string>
 
-    <string name="the_word_was_already_exist">The word was already exist</string>
+    <string name="the_word_was_already_exist">The word was already exist, please type in a new word</string>
+    <string name="successfully_add_the_word">Successfully add the word</string>
+    <string name="successfully_update_the_word">Successfully update the word</string>
+    <string name="update_word_failed">Update word failed, please try again.</string>
 
 
 </resources>

@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.List;
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
 
-    //private onItemClickListener mOnItemClickListener;
+    private OnItemClickListener mOnItemClickListener;
 
     class WordViewHolder extends RecyclerView.ViewHolder {
 
@@ -27,20 +26,15 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         }
     }
 
+    // on item click interface
+    public interface OnItemClickListener {
+        void onClick(int position, String word, String wordDef, String wordProp);
+    }
 
-
-    //custom on item click listener
-//    public interface onItemClickListener {
-//        void onItemClick(View view,int position);
-//    }
-//
-//    public void setOnItemClickLitsener(onItemClickListener mOnItemClickLitsener)
-//    {
-//        mOnItemClickListener= mOnItemClickLitsener;
-//    }
-
-
-
+    // set on item click
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
 
     LayoutInflater mInflater;
     private List<Word> mWords;
@@ -64,44 +58,30 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final WordViewHolder holder, int position) {
-
-        //set on item click listener
-//        if(mOnItemClickListener!=null)
-//        {
-//            holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v)
-//                {
-//                    int pos =holder.getLayoutPosition();
-//                    mOnItemClickListener.onItemClick(holder.itemView, pos);
-//                }
-//            });
-//        }
+    public void onBindViewHolder(@NonNull final WordViewHolder holder, final int position) {
 
 
-
-
-
-
+        //implement the on item click listener
+        if (mOnItemClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickListener.onClick(position, mWords.get(position).getWord(),mWords.get(position).getWordDef(), mWords.get(position).getWordProp());
+                }
+            });
+        }
 
         if (mWords == null) {
-
             holder.wordItemView.setText(R.string.no_word);
         } else {
             Word current = mWords.get(position);
-            String addWord = current.getWord() +" "+ current.getWordProp() + " - " + current.getWordDef();
+            String addWord = current.getWord() + " " + current.getWordProp() + " - " + current.getWordDef();
             holder.wordItemView.setText(addWord);
         }
-
     }
 
     @Override
     public int getItemCount() {
         return mWords == null ? 0 : mWords.size();
     }
-
-
-
-
 }

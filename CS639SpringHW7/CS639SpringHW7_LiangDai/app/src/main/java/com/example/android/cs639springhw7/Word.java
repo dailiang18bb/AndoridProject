@@ -9,7 +9,10 @@ import android.support.annotation.NonNull;
 @Entity(tableName = "word_table")
 public class Word {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    private int mId;
+
     @NonNull
     @ColumnInfo(name = "word")
     private String mWord;
@@ -20,17 +23,21 @@ public class Word {
     @ColumnInfo(name = "word_def")
     private String mWordDef;
 
-
-    public Word(@NonNull String word,@NonNull String mWordDef,@NonNull String mWordProp) {
+    //Word class constructor
+    public Word(int id, @NonNull String word, @NonNull String mWordDef, @NonNull String mWordProp) {
+        this.mId = id;
         this.mWord = word;
         this.mWordDef = mWordDef;
         this.mWordProp = mWordProp;
     }
 
+    // getters
+
+    public int getId() { return mId;}
+
     public String getWord() {
         return this.mWord;
     }
-
 
     public String getWordDef() {
         return this.mWordDef;

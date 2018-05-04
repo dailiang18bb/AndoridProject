@@ -70,6 +70,16 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:text="@string/button_save"
-        android:textColor="@color/buttonLabel" />
+        android:textColor="@color/buttonLabel"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/button_update"
+        android:textColor="@color/buttonLabel"
+        android:visibility="gone"/>
 
 </LinearLayout>
