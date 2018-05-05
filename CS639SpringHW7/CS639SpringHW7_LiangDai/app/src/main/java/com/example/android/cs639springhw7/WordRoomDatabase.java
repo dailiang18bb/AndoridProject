@@ -9,7 +9,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 
-@Database(entities = {Word.class}, version = 3)
+@Database(entities = {Word.class}, version = 3) //every time when you install the app on the phone, then you change the database, you have to update the version
 public abstract class WordRoomDatabase extends RoomDatabase {
 
     public abstract WordDao wordDao();
