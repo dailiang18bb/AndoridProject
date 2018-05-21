@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RoomWordSample</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_word">Word&#8230;</string>
+    <string name="no_word">No Word</string>
+    <string name="hint_definition">Definition&#8230;</string>
+    <string name="part_of_speech">Part of Speech</string>
+    <string name="button_save">Save</string>
+    <string name="please_fill_in_all_values_before_saving">Please fill in all values before saving</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+</resources>

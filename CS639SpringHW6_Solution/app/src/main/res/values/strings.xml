@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CS639SpringHW6</string>
+    <string name="degree_comma_description">%1$s&#176;, %2$s</string>
+    <string name="no_place_selected">No Place Selected</string>
+</resources>
